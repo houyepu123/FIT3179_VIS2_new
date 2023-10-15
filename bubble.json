@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 170,
+  "height": 300,
+  "title": "GDP vs CO2 Emissions for 2021",
+  "data": {
+    "url": "cleaned_data.csv"
+  },
+  "transform": [
+    {
+      "calculate": "0", 
+      "as": "minimumPopulation"
+    }
+  ],
+  "params": [
+    {
+      "name": "populationThreshold",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 100000000,
+        "step": 1000000,
+        "name": "Minimum Population"
+      }
+    }
+  ],
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum['Population (historical estimates)'] > populationThreshold"
+        }
+      ],
+      "mark": "circle",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita",
+          "type": "quantitative",
+          "title": "GDP per capita",
+          "scale": {"type": "log"},
+          "axis": {"grid": false}
+        },
+        "y": {
+          "field": "Annual CO₂ emissions",
+          "type": "quantitative",
+          "title": "CO2 Emissions",
+          "scale": {"type": "log"},
+          "axis": {"grid": false}
+        },
+        "size": {
+          "field": "Population (historical estimates)",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {"field": "GDP per capita", "type": "quantitative"},
+          {"field": "Annual CO₂ emissions", "type": "quantitative"},
+          {"field": "Population (historical estimates)", "type": "quantitative"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Entity === 'Australia' || datum.Entity === 'China'"
+        }
+      ],
+      "mark": "text",
+      "encoding": {
+        "x": {"field": "GDP per capita", "type": "quantitative"},
+        "y": {"field": "Annual CO₂ emissions", "type": "quantitative"},
+        "text": {"field": "Entity", "type": "nominal"}
+      }
+    }
+  ]
+}
+
+
+
+
+
+
+

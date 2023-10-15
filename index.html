@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Multiple Visualisations | An Example</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>CO2 vs GDP analysis in different countries</h1>
+        <p>Our analysis focuses on analyzing <span class="highlight">CO₂ emissions relative to GDP across countries</span> which helps gauge the environmental impact of economic development. A lower CO₂-to-GDP ratio indicates efficient energy use and possibly a shift to cleaner energy sources. This analysis informs climate policies, indicating if nations are achieving economic growth sustainably. It aids in setting targets for sustainable development, informs green investment decisions, and highlights technological innovations. Ultimately, understanding the relationship between CO₂ emissions and GDP is crucial for countries aiming to balance economic growth with environmental responsibility in the face of global climate challenges.</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group VIS 1-->
+    <div class="pure-g">
+      <!-- Title -->
+      <div class="pure-u-1-1">
+        <h2>Annual CO2 emissions per capita - 2021 - Most recent</h2>
+      </div>
+      <!-- Visualization (Map) Container -->
+      <div class="pure-u-1-1">
+        <div id="vis1" class="vis-container"></div>
+      </div>
+      <!-- Description Container -->
+      <div class="pure-u-1-1">
+        <p><span class="highlight">Afghanistan's</span> central placement might indicate its emerging role in global environmental discourse. <span class="highlight">China's</span> map, with a distinct blue line, could signify a major infrastructure or environmental boundary, impacting emissions. The "Annual CO2 emissions" caption, alongside values from "2,000,000,000" to "10,000,000,000," provides a scale, possibly reflecting the countries' emissions. This side-by-side presentation underscores disparities in industrialization and environmental impact between nations. While China's emissions might stem from industrial activities, Afghanistan's could be influenced by reconstruction and energy projects, emphasizing the global interconnectedness of climate issues.</p>
+      </div>
+    </div>
+
+     <!-- pure grid group -->
+    <div class="pure-g">
+      <!-- Title -->
+      <div class="pure-u-1-1">
+        <h2>Top 10 countries by GDP per capita and by CO2 emissions</h2>
+      </div>
+
+      <!-- Visualization (Map) Container -->
+      <div class="pure-u-1-1">
+        <div id="vis3" class="vis-container"></div>
+      </div>
+
+       <!-- Description Container -->
+      <div class="pure-u-1-1">
+        <p>Each bar's height corresponds to the GDP, providing an instant comparative perspective. Among the array of countries showcased, two distinctly stand out. <span class="highlight">Norway</span> soars with the tallest bar, signifying its unmatched GDP and economic prowess in this dataset. Parallelly, in a category ranking countries, the <span class="highlight">Czechia</span> emerges as the front-runner, its prominence highlighted by its towering bar. Although Norway appears to be at the top of the countries interms of GDP but it doesn't have a correlation of CO2 emissions. Which comes to a question of whether the population is the key influnce towards CO2 emissions. </p>
+      </div>
+    </div>
+
+    <!-- pure grid group VIS 2 -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>GDP per capita vs CO2 Emissions of 2021</h2>
+      </div>
+      <!-- Visualization Container -->
+      <div class="pure-u-1-2">
+          <div id="vis2" class="vis-container"></div>
+      </div>
+      
+      <!-- Description Container -->
+      <div class="pure-u-1-2">
+          <div class="description description-right">
+              <p>Each bubble's size is indicative of the population, offering a third dimension to the data. While numerous countries display varying degrees of economic growth and carbon outputs, one country stands prominently: <span class="highlight">China</span>. With its meteoric economic rise, China not only showcases one of the highest GDPs but also tops the chart in CO₂ emissions, underscoring the challenges and responsibilities it faces in the global effort toward sustainable development.</p>
+          </div>
+      </div>
+    </div>
+
+     <!-- pure grid group -->
+     <div class="pure-g">
+        <div class="pure-u-1-1">
+          <h2>GDP per capita vs Annual CO2 emissions</h2>
+        </div>
+        <!-- Visualization Container -->
+        <div class="pure-u-1-2">
+            <div id="vis4" class="vis-container"></div>
+        </div>
+        
+        <!-- Description Container -->
+        <div class="pure-u-1-2">
+            <div class="description description-right">
+                <p>Each data point represents a country, with its position determined by its economic standing and environmental impact. Notably, <span class="highlight">Qatar</span> emerges as a distinct outlier. It boasts the highest GDP per capita, demonstrating its significant economic stature. However, this economic prosperity comes at a price, as Qatar also leads in Annual CO₂ emission, highlighting the environmental challenges accompanying its wealth.</p>
+            </div>
+        </div>
+    </div>
+     <!-- pure grid group VIS 2 -->
+     <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>The change in total annual CO2 emission from 1800 to 2021</h2>
+      </div>
+      <!-- Visualization Container -->
+      <div class="pure-u-1-2">
+          <div id="vis5" class="vis-container"></div>
+      </div>
+      <!-- Description Container -->
+      <div class="pure-u-1-2">
+          <div class="description description-right">
+              <p>The graph traces annual CO₂ emissions from 1800 to 2021, highlighting humanity's escalating carbon footprint. Emissions were relatively low during the early Industrial Revolution, around 1800, but saw a dramatic surge in the 20th century due to rapid industrialization and reliance on fossil fuels. This uptick, especially pronounced post-1960s, correlates with rising global temperatures, emphasizing the human role in climate change. The data underscores the pressing need for sustainable energy solutions, balancing economic growth with environmental responsibility. This historical perspective serves as a reminder of the challenges and responsibilities we face in addressing climate change.</p>
+          </div>
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://fit3179.github.io/Vega-Lite/" target="_blank">Yepu Hou</a>. The datasource is <a href="https://ourworldindata.org/co2-emissions" target=" _blank">some data repository online</href>.</p>
+      </div>
+    </div>
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    // Fetch and render the visualization from vega_lite.json
+    fetch('choropleth_map.json')
+    .then(response => response.json())
+    .then(spec => {
+        vegaEmbed('#vis1', spec, { "actions": false });
+    })
+    .catch(error => {
+        console.error("Error loading vega_lite.json:", error);
+    });
+
+    // Fetch and render the visualization from data.json
+    fetch('bubble.json')
+    .then(response => response.json())
+    .then(spec => {
+        vegaEmbed('#vis2', spec, { "actions": false });
+    })
+    .catch(error => {
+        console.error("Error loading data.json:", error);
+    });
+
+    // Fetch and render the visualization from data.json
+    fetch('barchat.json')
+    .then(response => response.json())
+    .then(spec => {
+        vegaEmbed('#vis3', spec, { "actions": false });
+    })
+    .catch(error => {
+        console.error("Error loading data.json:", error);
+    });
+
+    // Fetch and render the visualization from data.json
+    fetch('scatter.json')
+    .then(response => response.json())
+    .then(spec => {
+        vegaEmbed('#vis4', spec, { "actions": false });
+    })
+    .catch(error => {
+        console.error("Error loading data.json:", error);
+    });
+
+     // Fetch and render the visualization from data.json
+     fetch('line_graph.json')
+    .then(response => response.json())
+    .then(spec => {
+        vegaEmbed('#vis5', spec, { "actions": false });
+    })
+    .catch(error => {
+        console.error("Error loading data.json:", error);
+    });
+
+
+  </script>
+</body>
+
+</html>
